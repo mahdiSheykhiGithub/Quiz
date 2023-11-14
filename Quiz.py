@@ -52,18 +52,18 @@ while True:
     else:
         break
 
-grade = number
+grade = int(number)
 
 print(f'\n\tYou should answer to {number} question')
-for t in range(10):
+for t in range(int(number)):
     math_phrase = create_questions()
     confirmed_answer = get_answer(math_phrase)
     grade = check_answers(confirmed_answer, math_phrase)
 
-if grade >= 8:
-    print(f'\n\tPerfect\nyour grade: {grade}/{number} ')
-elif grade >= 6:
-    print(f'Not bad\nyour grade: {grade}/{number} ')
+if grade >= int(number)*2/3:
+    print(f'\n\tPerfect\n\tyou answered {grade} out of {number} questions correctly ')
+elif grade >= int(number)/2:
+    print(f'\n\tNot bad\n\tyou answered {grade} out of {number} questions correctly  ')
 else:
-    print(f'You have to try harder\nyour grade: {grade}/{number} ')
+    print(f'\n\tYou have to try harder\n\tyou answered {grade} out of {number} questions correctly  ')
 input()
